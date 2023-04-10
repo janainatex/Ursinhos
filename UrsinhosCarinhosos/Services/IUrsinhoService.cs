@@ -5,8 +5,13 @@ using System.Threading.Tasks;
 
 namespace UrsinhosCarinhosos.Services
 {
-    public interface iUrsinhoService
+    public interface IUrsinhoService
     {
-        
+        List<UrsinhosCarinhosos> GetUrsinhosCarinhosos ();
+        UrsinhosCarinhosos GetUrsinhosCarinhosos(int Numero );
+        UrsinhoDto GetUrsinhoDto ();
+        DetailsDto GetDetailUrsinho(int Numero);
+        Tipo GetTipo (string Nome);
+
     }
 }

@@ -7,6 +7,7 @@ namespace UrsinhosCarinhosos.Models
 {
     public class Tipo
     {
-        
+        // Atributos
+        public string Nome { get; set;}
     }
 }

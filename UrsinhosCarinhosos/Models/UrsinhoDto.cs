@@ -7,6 +7,6 @@ namespace UrsinhosCarinhosos.Models
 {
     public class UrsinhoDto
     {
-        
+        public List<Ursinhos> Ursinhos {get; set;} 
     }
 }
