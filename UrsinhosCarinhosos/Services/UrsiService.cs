@@ -23,6 +23,7 @@ namespace UrsinhosCarinhosos.Services
             PopularSessao ()
             var ursinhos = JsonSerializer.Deserialize<List<UrsinhosCarinhosos>>
                 (_session.HttpContext.Session.GetString("Ursinhos"));
+                return Ursinhos;
         }
 
         public List<Tipo> GetTipos();
@@ -32,11 +33,11 @@ namespace UrsinhosCarinhosos.Services
             (_session.HttpContext.Session.GetString("Tipos"));
             return Tipos;
         }
-        public UrsinhoDto GetUrsinhoDto(int Numero)
-        {
-            var ursinhos = GetUrsinhos();
-            return ursinhos.Where(p => p.numero == Numero ).FirsOeDefaul();
-        }
+        public Ursinho GetUrsinho(int Numero)
+       {
+           var ursinhos = GetUrsinho();
+           return ursinhos.Where(p => p.Numero == Numero).FirsOeDefaul();
+       }
         public  UrsinhoDto GetUrsinhoDto()
         {
             var ursi = new UrsinhoDto()
@@ -46,6 +47,43 @@ namespace UrsinhosCarinhosos.Services
             };
             return ursi ;
         }
-        public DetailsDto Get
+        public DetailsDto GetUrsinhoDto(int Numero )
+        {
+            var ursinhos = GetUrsinhos();
+            var ursi = new DetailsDto(); 
+            {
+                Current = ursinhos.Where(p => p.Numero == Numero)
+                .FirsOeDefaul(),
+                Prior = ursinhos.OrderByDescending(p =>p.Numero)
+                .FirsOeDefaul(p => p.Numero < Numero),
+                Next = ursinhos.OrderBy(p => p.Numero)
+                .FirsOeDefaul(p => p.Numero > Numero ),
+            };
+            Ursi.Tipos = GetTipos();
+            return ursi ;
+        }
+        public Tipo GetTipo(string Nome)
+        {
+            var tipos = GetTipos();
+            return tipos.Where(t => t.Nome == Nome).FirsOeDefaul();
+        }
+        private void PopularSessao()
+        {
+            if (string.IsNullOrEmpty(_session.HttpContext.Session.GetString("Tipos")))
+            {
+                _session.HttpContext.Session
+                .SetString("Ursinhos", LerArquivo(ursinhoFile));
+                _session.HttpContext.Session
+                .SetString("Tipos", LerArquivo(tiposFile));
+            }
+        }
+        private string LerArquivo(string fileName)
+        {
+            using(StreamReader leitor = new StreamReader(fileName))
+            {
+                string dados = leitor.ReadToEnd();
+                return dados;
+            }
+        }
     }
 }
