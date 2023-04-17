@@ -1,7 +1,13 @@
+using Pokedex.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSession();
+builder.Services.AddHttpContextAcessor();
+builder.Services.AddSingleton<IPokeServece, PokeService>();
 
 var app = builder.Build();
 
@@ -9,19 +15,20 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    //The default HSTS value is 30 days . You may want to change this for production .....
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFile();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UserAutorization();
+
+app.UseSesion();
 
 app.MapControllerRoute(
-    name: "default",
+    name : "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.Run();
+    app.Run();
