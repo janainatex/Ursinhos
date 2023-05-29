@@ -1,31 +1,31 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using UrsinhosCarinhosos.Models;
-
+using UrsinhosCarinhosos.Services;
 namespace UrsinhosCarinhosos.Controllers;
-
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly IUrsiService_ursiService;
+    private readonly IUrsosService _ursosService;
 
-    public HomeController(ILogger<HomeController> logger, IUrsiService ursiService)
+    public HomeController(ILogger<HomeController> logger, IUrsosService ursosService)
     {
         _logger = logger;
-        _ursiService= ursiService;
+        _ursosService = ursosService;
     }
 
-    public IActionResult Index(string tipo)
+
+    public IActionResult Index(string personagem)
     {
-        var ursi = ursiSevice.GetUrsinhoDto();
-        ViewData[ "filter"] = string.IsNullOrEmpty(tipo)? "all" : tipo;
-        return View(ursi);
+        var perso = _ursosService.GetUrsoDto();
+        ViewData["filter"] = string.IsNullOrEmpty(personagem) ? "all" : personagem;
+        return View(perso);
     }
 
-    public IActionResult Privacy()
+        public IActionResult Details(int Numero)
     {
-        var ursi = ursiService.GetDetaielUrsinho(Numero);
-        return View(ursinho);
+        var personagens = _ursosService.GetDetailedPersonagem(Numero);
+        return View(personagens);
     }
 
     public IActionResult Privacy()
@@ -34,9 +34,9 @@ public class HomeController : Controller
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-     public IActionResult Error()
+    public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id 
-            ?? HttpContext.TraceIndentfier });
+        ?? HttpContext.TraceIdentifier });
     }
 }

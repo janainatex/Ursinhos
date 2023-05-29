@@ -1,0 +1,45 @@
+[
+    {
+        "Numero": 1,
+        "Nome": "Animadinha",
+        "Descricao" :"A Animadinha praticamente inventou essa coisa de ver tudo pelo lado positivo! Ela está sempre usando palavras de apoio na hora certa, encorajando ou ajudando a resolver problemas. A felicidade que ela espalha por aí está estampada em seu sorriso e no símbolo que ela traz na barriga.",
+        "Imagem" : "\\img\\Ursinhos\\animadinha.jfif" 
+    },
+    {
+        "Numero" : 2,
+        "Nome" : "Elefante",
+        "Descricao" :"Fanti é a Prima dos Ursinhos Carinhosos de coração mais bondoso e cheio de compaixão. Ela é amorosa e boa e sempre tenta se colocar no lugar do outro — muitas vezes parece que ela sente as emoções dos outros da mesma forma que eles.",
+        "Imagem" : "\\img\\Ursinhos\\elefante.jfif" 
+    },
+    {
+        "Numero" : 3,
+        "Nome" : "Florzinha",
+        "Descricao" : "Uma artista talentosa que tudo que faz é com a intenção de juntar as pessoas e encorajá-las a fazer sempre seu melhor, especialmente através da música. Ela acredita que  as diferenças são a chave para se criar harmonia no mundo. A flor em sua barriga reflete isso através de pétalas de diferentes cores.",
+        "Imagem" : "\\img\\Ursinhos\\florzinha.jfif"
+    },
+    {
+        "Numero" : 4,
+        "Nome" : "Guaxi",
+        "Descricao" : "Os Primos dos Ursinhos Carinhosos não seriam a Equipe do Carinho se não fosse pelo Guaxi — pois foi ele que uniu grupo! O que ele mais gosta é de Ciências — e ele é tão inteligente que reformula as frases para que todos ao seu redor compreendam.",
+        "Imagem" : "\\img\\Ursinhos\\raposaroxa.jfif"
+    },
+    {
+        "Numero" : 5,
+        "Nome" : "Solzinho",
+        "Descricao" : "Para o Ursinho Sol, se divertir é o melhor trabalho do mundo. Nada o deixa mais feliz do que estar com os amigos, ou viver aventuras — fazendo ainda mais amigos pelo caminho! Ele vive a maior parte de seus dias com um otimismo cheio de brilho e com muita coragem. O símbolo na barriga do Ursinho Sol reflete esse espírito — um sol amarelo sorridente e brilhante!",
+        "Imagem" : "\\img\\Ursinhos\\soolzinho.jfif"
+    },
+    {
+        "Numero" : 6,
+        "Nome" : "Valente",
+        "Descricao" : "O Leão Valente é o líder gentil e destemido dos Primos dos Ursinhos Carinhosos. Ele tem um coração de ouro, um excelente senso de humor, sem contar o sorriso mais alegre das redondezas.",
+        "Imagem" : "\\img\\Ursinhos\\valente.jfif"
+    },
+    {
+        "Numero" : 7,
+        "Nome" : "Zangadinho",
+        "Descricao" : "Por trás de toda rabugice do Ursinho Zangadinho está um grande manteiga-derretida que realmente se importa com os outros! Ele é muito bom com as crianças e gosta de lembrar a todos quando não estão tendo um dia bom que são sempre muito amados — por isso o símbolo em sua barriga é uma nuvem de chuva com pingos em forma de coração.",
+        "Imagem" : "\\img\\Ursinhos\\zangadinho.jfif"
+
+    }
+]
